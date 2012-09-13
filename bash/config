@@ -1,2 +1,38 @@
-export PS1="\w$ "
-export EDITOR="mate_wait"
+green='\e[0;32m' # Green
+yellow='\e[0;33m' # Yellow
+purple='\e[0;35m' # Purple
+white='\e[0;37m' # White
+color_off='\e[0m' # Color Reset
+
+git_current() {
+  if [ -d .git ] || git rev-parse --git-dir >/dev/null 2>&1; then
+    git status --porcelain | awk -v ORS='; ' '
+/^U/ { conflict++ }
+/^A/ { added++ }
+/^D/ { deleted++ }
+/^[?]/ { untracked++ }
+/^.M/ { modified++ }
+/^[^ ?AU]/ { staged++ }
+
+END {
+  if (conflict) { print "conflict: " conflict }
+  if (added) { print "added: " added }
+  if (deleted) { print "deleted: " deleted }
+  if (untracked) { print "untracked: " untracked }
+  if (modified) { print "modified: " modified }
+  if (staged) { print "staged: " staged }
+}'
+  fi
+}
+
+
+export GIT_PS1_SHOWDIRTYSTATE=true
+export PS1="\[${green}\]\u@\h\
+\[${yellow}\] \w\
+\[${yellow}\]"'$(__git_ps1)'"\
+\[${purple}\] "'$(git_current)'"\
+\[${white}\]\n\$\
+\[${color_off}\] "
+export EDITOR="vim"
+
+# vim:filetype=bash
