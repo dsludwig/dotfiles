@@ -1,26 +1,29 @@
-green='\e[0;32m' # Green
-yellow='\e[0;33m' # Yellow
-purple='\e[0;35m' # Purple
-white='\e[0;37m' # White
-color_off='\e[0m' # Color Reset
+red='\e[0;31m'
+green='\e[0;32m'
+yellow='\e[0;33m'
+blue='\e[0;34m'
+purple='\e[0;35m'
+cyan='\e[0;36m'
+white='\e[0;37m'
+color_off='\e[0m'
 
 git_current() {
   if [ -d .git ] || git rev-parse --git-dir >/dev/null 2>&1; then
-    git status --porcelain | awk -v ORS='; ' '
+    git status --porcelain | awk -v ORS=' ' '
 /^U/ { conflict++ }
 /^A/ { added++ }
-/^D/ { deleted++ }
-/^[?]/ { untracked++ }
+/^.D/ { deleted++ }
 /^.M/ { modified++ }
+/^[?]/ { untracked++ }
 /^[^ ?AU]/ { staged++ }
 
 END {
-  if (conflict) { print "conflict: " conflict }
-  if (added) { print "added: " added }
-  if (deleted) { print "deleted: " deleted }
-  if (untracked) { print "untracked: " untracked }
-  if (modified) { print "modified: " modified }
-  if (staged) { print "staged: " staged }
+  if (conflict) { print "#" conflict }
+  if (added) { print "\033[32;40m+" added }
+  if (deleted) { print "\033[31;40m-" deleted }
+  if (untracked) { print "\033[37;40m?" untracked }
+  if (modified) { print "\033[33;40m*" modified }
+  if (staged) { print "\033[36;40m$" staged }
 }'
   fi
 }

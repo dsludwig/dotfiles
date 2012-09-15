@@ -4,6 +4,32 @@
 alias reload='. ~/.bash_profile'
 alias quote="sed -e 's/^/\"/' -e 's/$/\"/'"
 
+gs() {
+  if [ "$#" == "0" ]; then
+    git status --porcelain
+  else
+    case $1 in
+    "-d")
+      SEARCH_STR=^\ D
+      ;;
+    "-a")
+      SEARCH_STR=^A
+      ;;
+    "-u")
+      SEARCH_STR=^\?
+      ;;
+    "-m")
+      SEARCH_STR=^\ M
+      ;;
+    *)
+      echo "Unrecognized option: $1"
+      return
+      ;;
+    esac
+    git status --porcelain | grep "$SEARCH_STR" | awk '{ print substr($0, 4) }'
+  fi
+}
+
 flatten() {
   find "$1" -type f -print0 | xargs -0 mv --target-directory "$1"
   find "$1" -type d -print0 | xargs -0 rmdir
