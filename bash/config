@@ -38,4 +38,5 @@ export PS1="\[${green}\]\u@\h\
 \[${color_off}\] "
 export EDITOR="vim"
 
+set bell-style visible
 # vim:filetype=bash
