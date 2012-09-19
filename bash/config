@@ -7,6 +7,19 @@ cyan='\e[0;36m'
 white='\e[0;37m'
 color_off='\e[0m'
 
+title() {
+  case $TERM in
+    cygwin*)
+      echo -ne "\033]0;$@\007"
+      ;;
+    xterm*)
+      echo -ne "\033]0;$@\007"
+      ;;
+    *)
+      ;;
+  esac
+}
+
 git_current() {
   if [ -d .git ] || git rev-parse --git-dir >/dev/null 2>&1; then
     git status --porcelain | awk -v ORS=' ' '
@@ -28,13 +41,13 @@ END {
   fi
 }
 
-
 export GIT_PS1_SHOWDIRTYSTATE=true
 export PS1="\[${green}\]\u@\h\
 \[${yellow}\] \w\
 \[${yellow}\]"'$(__git_ps1)'"\
 \[${purple}\] "'$(git_current)'"\
 \[${white}\]\n\$\
+\["'$(title \h:\w)'"\]\
 \[${color_off}\] "
 export EDITOR="vim"
 
