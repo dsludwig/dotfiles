@@ -1,9 +1,10 @@
 . ~/.zsh/aliases
-#
+
 # misc
 alias reload='. ~/.bash_profile'
 alias quote="sed -e 's/^/\"/' -e 's/$/\"/'"
 
+# Git related aliases
 gs() {
   if [ "$#" == "0" ]; then
     git status --porcelain
@@ -29,16 +30,18 @@ gs() {
     git status --porcelain | grep "$SEARCH_STR" | awk '{ print substr($0, 4) }'
   fi
 }
+# This doesn't work.
+vim-conflicts() {
+  git status --porcelain | grep ^UU | cut -f2- -d\  | quote | xargs vim -o
+}
 
+# Directory management
 flatten() {
   find "$1" -type f -print0 | xargs -0 mv --target-directory "$1"
   find "$1" -type d -print0 | xargs -0 rmdir
 }
 
-vim-conflicts() {
-  git status --porcelain | grep ^UU | cut -f2- -d\  | quote | xargs vim -o
-}
-
+# Movie/TV management
 unwatched() {
   if [ -e .watched ]; then
     ls -1 | cat .watched - | sort | uniq -u
@@ -46,7 +49,6 @@ unwatched() {
     ls -1 | sort
   fi
 }
-
 watch() {
   if [ -e "$1" ]; then
     echo "$1" >> .watched
@@ -55,5 +57,4 @@ watch() {
     echo Could not find: $1
   fi
 }
-
 alias watch-next='watch "$(unwatched | head -1)"'
