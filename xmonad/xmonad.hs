@@ -4,8 +4,6 @@ import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
--- import XMonad.Hooks.ICCCMFocus
--- import XMonad.Config.Gnome
 import XMonad.Layout.Tabbed
 import XMonad.Layout.Accordion
 import XMonad.Layout.NoBorders -- (noBorders)

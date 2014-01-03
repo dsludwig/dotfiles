@@ -1,9 +1,19 @@
 #!/bin/sh
 # set up me colors/fonts
 
-xrdb ~/.Xresources &
+if [ -f ~/.Xresources ]; then
+  xrdb ~/.Xresources &
+fi
+
+if [ -f ~/.Xmodmap ]; then
+  xmodmap ~/.Xmodmap
+fi
+
 xsetroot -cursor_name left_ptr
 xsetroot -gray
+
+# shut up the bell
+xset -b
 
 # restore the background
 /bin/sh ~/.fehbg
