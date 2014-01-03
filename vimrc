@@ -4,6 +4,14 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'istib/vifm.vim'
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
