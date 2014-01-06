@@ -50,6 +50,7 @@ export PS1="\[${green}\]\u@\h\
 \["'$(title \h:\w)'"\]\
 \[${color_off}\] "
 export EDITOR="vim"
+export PAGER="less"
 
 set bell-style visible
 # vim:filetype=bash
