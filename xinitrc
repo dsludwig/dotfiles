@@ -18,6 +18,9 @@ xset -b
 # restore the background
 /bin/sh ~/.fehbg
 
+# start displaying new bgs
+rotate-background &
+
 # fix screens
 xrandr --output LVDS1 --auto --output VGA1 --auto --left-of LVDS1
 
