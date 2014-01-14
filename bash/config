@@ -51,6 +51,8 @@ export PS1="\[${green}\]\u@\h\
 \[${color_off}\] "
 export EDITOR="vim"
 export PAGER="less"
+export HISTIGNORE="&:ls:ls *:vim:[bf]g:exit"
 
+set -o vi
 set bell-style visible
 # vim:filetype=bash

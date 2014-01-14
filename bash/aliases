@@ -3,7 +3,7 @@
 # misc
 alias reload='. ~/.bash_profile'
 alias quote="sed -e 's/^/\"/' -e 's/$/\"/'"
-alias startx='ssh-agent startx'
+alias startx='exec ssh-agent startx'
 
 # Git related aliases
 gs() {
