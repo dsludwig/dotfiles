@@ -1,6 +1,6 @@
 import XMonad
 import XMonad.Util.Run
-import XMonad.Util.EZConfig (additionalKeys)
+import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
@@ -24,6 +24,13 @@ main = do
               , layoutHook = avoidStruts myLayoutHook
               , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "blue" "" . shorten 50
+                        , ppTitle = xmobarColor "blue" "" . shorten 80
                         }
-              }
+              } `additionalKeysP` theseKeys
+
+theseKeys =
+  [
+    ("M4-p", spawn "dmenu_run -fn Inconsolata-12"),
+    ("<XF86AudioRaiseVolume>", spawn "amixer set Master 1+"),
+    ("<XF86AudioLowerVolume>", spawn "amixer set Master 1-")
+  ]
