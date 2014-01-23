@@ -55,4 +55,8 @@ export HISTIGNORE="&:ls:ls *:vim:[bf]g:exit"
 
 set -o vi
 set bell-style visible
+
+# Set transparency in xterm
+[ -n "$XTERM_VERSION" ] && transset-df -a .9 > /dev/null
+
 # vim:filetype=bash
