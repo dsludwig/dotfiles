@@ -12,6 +12,7 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'istib/vifm.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'pangloss/vim-javascript'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
