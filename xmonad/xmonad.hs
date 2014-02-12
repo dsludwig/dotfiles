@@ -30,6 +30,7 @@ main = do
 
 theseKeys =
   [
+    ("M4-<Escape>", spawn "xscreensaver-command -lock"),
     ("M4-p", spawn "dmenu_run -fn Inconsolata-12"),
     ("<XF86AudioRaiseVolume>", spawn "amixer set Master 1+"),
     ("<XF86AudioLowerVolume>", spawn "amixer set Master 1-")
