@@ -12,6 +12,9 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'istib/vifm.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'git://repo.or.cz/vcscommand'
+Bundle 'hynek/vim-python-pep8-indent'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -173,13 +176,8 @@ endif
 
 " Use Ack instead of Grep when available
 if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
+  set grepprg=ack\ -k
 endif
-
-" Color scheme
-" colorscheme vividchalk
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
 set number
@@ -216,4 +214,3 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
-
