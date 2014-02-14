@@ -16,6 +16,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'git://repo.or.cz/vcscommand'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'pangloss/vim-javascript'
+Bundle 'rodjek/vim-puppet'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
