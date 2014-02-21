@@ -21,6 +21,9 @@ xset -b
 # start displaying new bgs
 rotate-background &
 
+# use vim for editing fields in chrome
+edit-server &
+
 # fix screens
 xrandr --output LVDS1 --auto --output VGA1 --auto --left-of LVDS1
 
