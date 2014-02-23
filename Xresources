@@ -69,6 +69,37 @@ xterm*color13:                 S_violet
 xterm*color14:                 S_base1
 xterm*color15:                 S_base3
 
+! xscreensaver ugliness
+!
+!font settings
+xscreensaver.Dialog.headingFont:        -*-georgia-bold-r-*-*-18-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-georgia-medium-r-*-*-18-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-georgia-medium-r-*-*-18-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-georgia-medium-r-*-*-18-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-georgia-bold-r-*-*-18-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-georgia-medium-r-*-*-18-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-georgia-bold-r-*-*-18-*-*-*-*-*-*-*
+!
+!!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         S_base0
+xscreensaver.Dialog.background:         S_base03
+xscreensaver.Dialog.topShadowColor:     S_base01
+xscreensaver.Dialog.bottomShadowColor:  S_base02
+xscreensaver.Dialog.Button.foreground:  S_base0
+xscreensaver.Dialog.Button.background:  S_base03
+!
+!!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    S_base0
+xscreensaver.Dialog.text.background:    S_base3
+xscreensaver.Dialog.internalBorderWidth:36
+xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.shadowThickness:    2
+!
+!!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  S_magenta
+xscreensaver.passwd.thermometer.background:  S_base02
+xscreensaver.passwd.thermometer.width:       10
+
 
 ! Terminal configuration
 xterm*faceName: inconsolata-12
