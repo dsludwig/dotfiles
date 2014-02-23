@@ -31,5 +31,7 @@ xscreensaver -no-splash &
 
 xcompmgr &
 
+devilspie &
+
 # start the wm
 exec xmonad

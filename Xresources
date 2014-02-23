@@ -73,5 +73,9 @@ xterm*color15:                 S_base3
 ! Terminal configuration
 xterm*faceName: inconsolata-12
 xterm*visualBell: true
+
+
+dzen2.background: S_base03
+dzen2.foreground: S_base0
+
 Xcursor.theme: OpenZone_White_Slim
-! Xcursor.theme: whiteglass

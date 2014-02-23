@@ -1,0 +1,6 @@
+background no
+out_to_console yes
+out_to_x no
+
+TEXT
+^i(.xmonad/dzen2/cpu.xbm) ${cpu}% ^i(.xmonad/dzen2/mem.xbm) ${memperc}%  ${if_existing /proc/net/route eth1} ^i(.xmonad/dzen2/net_wired.xbm)  ^i(.xmonad/dzen2/net_down_03.xbm) ${downspeed eth1}  ^i(.xmonad/dzen2/net_up_03.xbm) ${upspeed eth1}  ^i(.xmonad/dzen2/mpd.xbm)  ^i(.xmonad/dzen2/volume.xbm) ${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}%  ^i(.xmonad/dzen2/clock.xbm) ${time %d %m %Y} ${time %R}
