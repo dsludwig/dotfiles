@@ -47,7 +47,7 @@ export PS1="\[${green}\]\u@\h\
 \[${yellow}\]"'$(__git_ps1)'"\
 \[${purple}\] "'$(git_current)'"\
 \[${white}\]\n\$\
-\["'$(title \h:\w)'"\]\
+\["'$(title "\h:\w")'"\]\
 \[${color_off}\] "
 export EDITOR="vim"
 export PAGER="less"
