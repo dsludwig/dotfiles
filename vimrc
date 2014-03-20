@@ -11,12 +11,20 @@ Bundle 'gmarik/vundle'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'istib/vifm.vim'
-Bundle 'kien/ctrlp.vim'
+" Bundle 'kien/ctrlp.vim'
+Bundle 'wincent/Command-T'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+" Bundle 'tpope/vim-unimpaired'
 Bundle 'git://repo.or.cz/vcscommand'
 Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'pangloss/vim-javascript'
+" Bundle 'jelera/vim-javascript-syntax'
+Bundle 'JavaScript-Indent'
 Bundle 'rodjek/vim-puppet'
+Bundle 'scrooloose/syntastic'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'editorconfig/editorconfig-vim'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -206,3 +214,9 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
+
+" Fast file jumping
+map <C-P> :CommandT<CR>
+let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+let g:CommandTBackspaceMap = ['<C-h>']
+let g:CommandTLeftMap = '<Left>'
