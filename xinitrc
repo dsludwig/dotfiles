@@ -1,6 +1,7 @@
 #!/bin/sh
 # set up me colors/fonts
 
+xsetroot -cursor_name left_ptr
 if [ -f ~/.Xresources ]; then
   xrdb ~/.Xresources &
 fi
@@ -8,9 +9,6 @@ fi
 if [ -f ~/.Xmodmap ]; then
   xmodmap ~/.Xmodmap
 fi
-
-xsetroot -cursor_name left_ptr
-xsetroot -gray
 
 # shut up the bell
 xset -b
