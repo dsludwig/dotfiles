@@ -29,9 +29,9 @@ xrandr --output LVDS1 --auto --output VGA1 --auto --left-of LVDS1
 
 xscreensaver -no-splash &
 
-xcompmgr &
+# xcompmgr &
 
-devilspie &
+# devilspie &
 
 # start the wm
 exec xmonad
