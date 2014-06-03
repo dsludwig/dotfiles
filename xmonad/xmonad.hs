@@ -105,6 +105,7 @@ theseKeys =
   [
     ("M4-<Escape>", spawn "xscreensaver-command -lock"),
     ("M4-p", spawn dmenuCmd),
-    ("<XF86AudioRaiseVolume>", spawn "amixer set Master 1+"),
-    ("<XF86AudioLowerVolume>", spawn "amixer set Master 1-")
+    ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 1+"),
+    ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 1-"),
+    ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
   ]
