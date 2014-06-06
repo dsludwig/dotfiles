@@ -1,1 +1,4 @@
-(spawn_async "transset-df" "-i" (str window_xid) "0.9")
+(if
+  (not (is (window_class) "Chromium"))
+  (spawn_async "transset-df" "-i" (str window_xid) "0.9")
+)
