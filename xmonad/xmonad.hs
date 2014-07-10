@@ -37,6 +37,8 @@ bitmapsDir = ".xmonad/dzen2"
 myLayoutHook = smartBorders $ layoutHook defaultConfig
 myManageHook = composeAll (
   [ className =? "mpv" --> doFullFloat
+  , className =? "KeePass2" --> doShift "8"
+  , className =? "Skype" --> doShift "9"
   , isFullscreen --> doFullFloat
   ])
 
