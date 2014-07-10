@@ -5,6 +5,10 @@ alias reload='. ~/.bash_profile'
 alias quote="sed -e 's/^/\"/' -e 's/$/\"/'"
 alias startx='exec ssh-agent startx'
 
+c() {
+  cd "$HOME/code/$1"
+}
+
 # Git related aliases
 gs() {
   if [ "$#" == "0" ]; then
@@ -24,7 +28,7 @@ gs() {
       SEARCH_STR=^\ M
       ;;
     *)
-      echo "Unrecognized option: $1"
+      git status "$@"
       return
       ;;
     esac
