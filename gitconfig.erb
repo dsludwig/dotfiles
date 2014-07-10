@@ -3,6 +3,9 @@
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
 	co = checkout
+  ci = commit
+  uncommit = reset --soft HEAD^
+  po = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
 [color]
 	diff = auto
 	status = auto
@@ -15,3 +18,7 @@
 	whitespace = nowarn
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[push]
+  default = simple
+[merge]
+  tool = kdiff3
