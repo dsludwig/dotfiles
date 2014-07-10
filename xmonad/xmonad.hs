@@ -1,5 +1,6 @@
 import XMonad
 import XMonad.Util.Run
+import XMonad.Util.SpawnOnce
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.WorkspaceCompare
 import XMonad.Hooks.DynamicLog
@@ -35,7 +36,9 @@ bitmapsDir = ".xmonad/dzen2"
 
 myLayoutHook = smartBorders $ layoutHook defaultConfig
 myManageHook = composeAll (
-  [ className =? "xmbc.bin" --> doFullFloat
+  [ className =? "mpv" --> doFullFloat
+  , className =? "KeePass2" --> doShift "8"
+  , className =? "Skype" --> doShift "9"
   , isFullscreen --> doFullFloat
   ])
 
@@ -60,7 +63,6 @@ conkyCmd = "/usr/bin/conky | /usr/bin/dzen2 " ++ flags
 main = do
   -- xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
   dzenproc <- spawnPipe dzenCmd
-  conkyproc <- spawnPipe conkyCmd
   xmonad $ ewmh $ defaultConfig
               { modMask = mod4Mask
               , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
@@ -68,6 +70,7 @@ main = do
               , logHook = dzenLogHook dzenproc
               , normalBorderColor = base0
               , focusedBorderColor = red
+              , startupHook = spawnOnce conkyCmd
               } `additionalKeysP` theseKeys
 
 xmobarLogHook h = dynamicLogWithPP xmobarPP
