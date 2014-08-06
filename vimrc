@@ -11,13 +11,13 @@ Bundle 'gmarik/vundle'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'istib/vifm.vim'
-" Bundle 'kien/ctrlp.vim'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
+" Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 " Bundle 'tpope/vim-unimpaired'
-Bundle 'git://repo.or.cz/vcscommand'
 Bundle 'hynek/vim-python-pep8-indent'
 " Bundle 'jelera/vim-javascript-syntax'
 Bundle 'JavaScript-Indent'
@@ -25,6 +25,10 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'dhruvasagar/vim-table-mode'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -70,7 +74,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.txt setfiletype text
 
   " Enable soft-wrapping for text files
-  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
+  autocmd FileType text,markdown,xhtml,eruby setlocal wrap linebreak nolist
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -115,11 +119,8 @@ set expandtab
 set laststatus=2
 
 
-" \ is the leader character
+" , is the leader character
 let mapleader = ","
-
-" Edit the README_FOR_APP (makes :R commands work)
-map <Leader>R :e doc/README_FOR_APP<CR>
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
@@ -138,6 +139,12 @@ map <Space> @q
 " File Browser
 "
 map <C-E> :EditVifm<CR>
+
+" Fast navigate open buffers
+map <Leader>b :CtrlPBuffer<CR>
+
+" Fast navigate tags
+map <Leader>t :CtrlPTag<CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
@@ -219,8 +226,17 @@ function! OpenURL()
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
+" Function jumps
+let g:ctrlp_extensions = ['funky']
+nnoremap <Leader>f :CtrlPFunky<CR>
+
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
 " Fast file jumping
-map <C-P> :CommandT<CR>
-let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-let g:CommandTBackspaceMap = ['<C-h>']
-let g:CommandTLeftMap = '<Left>'
+" map <C-P> :CommandT<CR>
+" let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+" let g:CommandTBackspaceMap = ['<C-h>']
+" let g:CommandTLeftMap = '<Left>'
