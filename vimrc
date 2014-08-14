@@ -234,6 +234,13 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" Find all references
+function! FindReferences()
+  let s:word = expand("<cword>")
+  exec "grep " . s:word
+endfunction
+map <C-_> :call FindReferences()<CR>
+
 
 " Fast file jumping
 " map <C-P> :CommandT<CR>
