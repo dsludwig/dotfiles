@@ -3,32 +3,47 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'istib/vifm.vim'
-Bundle 'kien/ctrlp.vim'
-" Bundle 'wincent/Command-T'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-" Bundle 'tpope/vim-unimpaired'
-Bundle 'hynek/vim-python-pep8-indent'
-" Bundle 'jelera/vim-javascript-syntax'
-Bundle 'JavaScript-Indent'
-Bundle 'rodjek/vim-puppet'
-Bundle 'scrooloose/syntastic'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'dhruvasagar/vim-table-mode'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'honza/vim-snippets'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'istib/vifm.vim'
+Plugin 'JavaScript-Indent'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kien/ctrlp.vim'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'rstacruz/sparkup'
+Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'tpope/vim-characterize'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-jdaddy'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'whatyouhide/vim-textobj-xmlattr'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'bps/vim-textobj-python'
+Plugin 'sgur/vim-textobj-parameter'
+Plugin 'terceiro/vim-foswiki'
+Plugin 'christoomey/vim-tmux-navigator'
+
+call vundle#end()
+filetype plugin indent on
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
