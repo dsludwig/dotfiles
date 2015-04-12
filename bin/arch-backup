@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BACKUP_DIR=${HOME}/backups/$(date --rfc-3339 date)
+if [ -d $BACKUP_DIR ]; then
+  echo Backup already exists!
+  exit 1
+fi
+
+mkdir $BACKUP_DIR
+cd $BACKUP_DIR
+pacman -Qii | awk '/^MODIFIED/ {print $2}' | while read x; do
+  mkdir -p .$(dirname $x)
+  cp $x .$x
+done
+pacman -Qentq > native.txt
+pacman -Qemq > foreign.txt
