@@ -53,6 +53,7 @@ export EDITOR="vim"
 export PAGER="less"
 export LESS="-R -S"
 export HISTIGNORE="&:ls:vim:[bf]g:exit"
+export EnableNuGetPackageRestore=true
 
 set -o vi
 set bell-style visible
