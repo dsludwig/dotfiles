@@ -44,6 +44,11 @@
 !
 ! URxvt*background:            S_base03
 
+
+! Terminal configuration
+xterm*faceName: inconsolata-12
+xterm*visualBell: true
+
 xterm*background:              S_base03
 xterm*foreground:              S_base0
 xterm*fading:                  40
@@ -68,6 +73,38 @@ xterm*color12:                 S_base0
 xterm*color13:                 S_violet
 xterm*color14:                 S_base1
 xterm*color15:                 S_base3
+!
+! Terminal configuration
+URxvt*font: xft:inconsolata:size=12
+URxvt*letterSpace: -1
+URxvt*visualBell: true
+URxvt*scrollBar: false
+
+
+URxvt*background:              S_base03
+URxvt*foreground:              S_base0
+URxvt*fading:                  20
+URxvt*fadeColor:               S_base03
+URxvt*cursorColor:             S_base1
+URxvt*pointerColorBackground:  S_base01
+URxvt*pointerColorForeground:  S_base1
+
+URxvt*color0:                  S_base02
+URxvt*color1:                  S_red
+URxvt*color2:                  S_green
+URxvt*color3:                  S_yellow
+URxvt*color4:                  S_blue
+URxvt*color5:                  S_magenta
+URxvt*color6:                  S_cyan
+URxvt*color7:                  S_base2
+URxvt*color9:                  S_orange
+URxvt*color8:                  S_base03
+URxvt*color10:                 S_base01
+URxvt*color11:                 S_base00
+URxvt*color12:                 S_base0
+URxvt*color13:                 S_violet
+URxvt*color14:                 S_base1
+URxvt*color15:                 S_base3
 
 ! xscreensaver ugliness
 !
@@ -99,11 +136,6 @@ xscreensaver.Dialog.shadowThickness:    2
 xscreensaver.passwd.thermometer.foreground:  S_magenta
 xscreensaver.passwd.thermometer.background:  S_base02
 xscreensaver.passwd.thermometer.width:       10
-
-
-! Terminal configuration
-xterm*faceName: inconsolata-12
-xterm*visualBell: true
 
 
 dzen2.background: S_base03

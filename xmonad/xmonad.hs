@@ -71,6 +71,7 @@ main = do
               , normalBorderColor = base0
               , focusedBorderColor = red
               , startupHook = spawnOnce conkyCmd
+              , terminal = "urxvt"
               } `additionalKeysP` theseKeys
 
 xmobarLogHook h = dynamicLogWithPP xmobarPP
