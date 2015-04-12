@@ -91,6 +91,8 @@ if has("autocmd")
   " Enable soft-wrapping for text files
   autocmd FileType text,markdown,xhtml,eruby setlocal wrap linebreak nolist
 
+  autocmd FileType python set tags^=~/.tags/python
+
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
@@ -180,7 +182,7 @@ au! BufRead,BufNewFile *.haml         setfiletype haml
 nmap <F1> <Esc>
 
 " Press ^F from insert mode to insert the current file name
-imap <C-F> <C-R>=expand("%")<CR>
+" imap <C-F> <C-R>=expand("%")<CR>
 
 " Maps autocomplete to tab
 imap <Tab> <C-N>
@@ -213,6 +215,12 @@ set numberwidth=5
 " Mouse
 set mouse=a
 
+" Window nav
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
 
@@ -243,13 +251,15 @@ function! OpenURL()
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
-" Function jumps
 let g:ctrlp_extensions = ['funky']
+" Function jumps
 nnoremap <Leader>f :CtrlPFunky<CR>
 
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:sparkupExecuteMapping="<c-f>"
 
 " Find all references
 function! FindReferences()
@@ -258,9 +268,11 @@ function! FindReferences()
 endfunction
 map <C-_> :call FindReferences()<CR>
 
+" let g:airline_powerline_fonts = 1
 
-" Fast file jumping
-" map <C-P> :CommandT<CR>
-" let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-" let g:CommandTBackspaceMap = ['<C-h>']
-" let g:CommandTLeftMap = '<Left>'
+let g:gitgutter_diff_args = '-w'
+highlight clear SignColumn
+" highlight link GitGutterAdd DiffAdd
+" highlight link GitGutterChange DiffChange
+" highlight link GitGutterDelete DiffDelete
+" highlight link GitGutterChangeDelete DiffChangeDelete
