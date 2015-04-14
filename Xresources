@@ -73,9 +73,16 @@ xterm*color12:                 S_base0
 xterm*color13:                 S_violet
 xterm*color14:                 S_base1
 xterm*color15:                 S_base3
+
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 !
 ! Terminal configuration
-URxvt*font: xft:inconsolata:size=12
+URxvt*font: xft:Inconsolata for Powerline:size=12
 URxvt*letterSpace: -1
 URxvt*visualBell: true
 URxvt*scrollBar: false
