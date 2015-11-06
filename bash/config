@@ -55,6 +55,7 @@ export LESS="-R -S"
 export HISTIGNORE="&:ls:vim:[bf]g:exit"
 export EnableNuGetPackageRestore=true
 export BROWSER="chromium"
+export CLICOLOR="auto"
 
 set -o vi
 set bell-style visible
