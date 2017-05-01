@@ -2,7 +2,7 @@
 
 # misc
 alias reload='. ~/.bash_profile'
-alias quote="sed -e 's/^/\"/' -e 's/$/\"/'"
+# alias quote="sed -e 's/^/\\"/' -e 's/$/\\"/'"
 alias startx='exec ssh-agent startx'
 
 c() {
