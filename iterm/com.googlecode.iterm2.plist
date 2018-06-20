@@ -2,9 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AboutToPasteTabsWithCancel</key>
+	<true/>
+	<key>AboutToPasteTabsWithCancel_selection</key>
+	<integer>2</integer>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
+	<false/>
+	<key>AlternateMouseScroll</key>
 	<false/>
 	<key>AnimateDimming</key>
 	<false/>
@@ -14,6 +20,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>CheckTestRelease</key>
@@ -283,6 +291,8 @@
 	<integer>32</integer>
 	<key>HotkeyCode</key>
 	<integer>49</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524288</integer>
 	<key>IRMemory</key>
@@ -316,7 +326,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdCAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAc7AAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -340,25 +350,25 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>260 414 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>443 363 620 392 0 0 1440 877 </string>
+	<string>442 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 76 618 519 0 0 1440 877 </string>
+	<string>269 26 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>72 259 796 473 0 0 1440 877 </string>
+	<string>72 324 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>66 0 1374 877 0 0 1440 877 </string>
+	<string>65 23 1375 854 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>3312 719 585 452 1440 -246 2560 1417 </string>
+	<string>65 0 1375 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>66 0 1374 877 0 0 1440 877 </string>
+	<string>66 425 585 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>66 425 570 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>66 0 1374 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>755 425 570 452 0 0 1440 877 </string>
+	<string>66 0 1374 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>755 0 685 877 0 0 1440 877 </string>
+	<string>755 425 570 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
 	<string>755 425 570 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 8</key>
@@ -1835,9 +1845,15 @@
 	<key>NoSyncInstallationId</key>
 	<string>C12F7FF5-28F2-4682-A89D-7DD2B34ACAE4</string>
 	<key>NoSyncLastTipTime</key>
-	<real>495074002.63818699</real>
+	<real>528316292.52872902</real>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
+	<true/>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
+	<key>NoSyncSuppressBroadcastInputWarning</key>
+	<true/>
+	<key>NoSyncSuppressBroadcastInputWarning_selection</key>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>486494945.29446602</real>
 	<key>NoSyncTimeOfLastPromo</key>
@@ -1913,6 +1929,12 @@
 		<string>0063</string>
 		<string>0064</string>
 		<string>0065</string>
+		<string>0066</string>
+		<string>0067</string>
+		<string>0068</string>
+		<string>0069</string>
+		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -1930,6 +1952,8 @@
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
+	<key>PerformDNSLookups</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1984,10 +2008,12 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-30T04:04:56Z</date>
+	<date>2018-05-04T04:15:27Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
@@ -2031,9 +2057,11 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.15</string>
+	<string>3.1.6</string>
 </dict>
 </plist>
