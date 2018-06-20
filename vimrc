@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'rstacruz/sparkup'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'tacahiroy/ctrlp-funky'
@@ -41,6 +42,7 @@ Plugin 'bps/vim-textobj-python'
 Plugin 'sgur/vim-textobj-parameter'
 Plugin 'terceiro/vim-foswiki'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -91,7 +93,11 @@ if has("autocmd")
   " Enable soft-wrapping for text files
   autocmd FileType text,markdown,xhtml,eruby setlocal wrap linebreak nolist
 
-  autocmd FileType python set tags^=~/.tags/python
+  " autocmd FileType python set tags^=~/.tags/python
+
+  autocmd FileType python
+        \ nnoremap <C-]> :YcmCompleter GoTo<CR> |
+        \ inoremap <C-]> :YcmCompleter GoTo<CR>
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -111,6 +117,10 @@ if has("autocmd")
   " Automatically load .vimrc source when saved
   autocmd BufWritePost .vimrc source $MYVIMRC
 
+
+  autocmd BufRead /Users/dludwig/code/docs/todos.md call AddDate()
+
+
   augroup END
 
 else
@@ -126,6 +136,11 @@ endif " has("autocmd")
   " set foldnestmax=2
   " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 " endif
+function! AddDate()
+  exec "0r!date"
+  exec "normal ggI## "
+  exec "normal o"
+endfunction
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -155,7 +170,8 @@ map <Space> @q
 
 " File Browser
 "
-map <C-E> :EditVifm<CR>
+map <C-E> :NERDTreeFind<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 " Fast navigate open buffers
 map <Leader>b :CtrlPBuffer<CR>
@@ -238,13 +254,14 @@ set smartcase
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 set tags=./tags;
 
+let g:browser="'/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'"
 " Open URL
 command! -bar -nargs=1 OpenURL :!open <args>
 function! OpenURL()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
   echo s:uri
   if s:uri != ""
-    exec "!chromium \"" . s:uri . "\""
+    exec "!" . g:browser . " \'" . s:uri . "\'"
   else
     echo "No URI found in line."
   endif
@@ -269,6 +286,8 @@ endfunction
 map <C-_> :call FindReferences()<CR>
 
 " let g:airline_powerline_fonts = 1
+"
+let &colorcolumn="80,".join(range(100,999),",")
 
 let g:gitgutter_diff_args = '-w'
 highlight clear SignColumn
@@ -276,3 +295,9 @@ highlight clear SignColumn
 " highlight link GitGutterChange DiffChange
 " highlight link GitGutterDelete DiffDelete
 " highlight link GitGutterChangeDelete DiffChangeDelete
+"
+let g:splitjoin_python_brackets_on_separate_lines = 1
+
+" Enable project-specific vimrc configuration
+set exrc
+set secure
