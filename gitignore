@@ -1,6 +1,14 @@
 .DS_Store
 .svn
 *~
+.swp
 .*.swp
 *.orig
+*.egg-info/
 tags
+.agignore
+.chalmers
+.idea/
+.cache/
+# exrc - project specific vim configuration
+/.vimrc
