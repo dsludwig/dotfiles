@@ -1,3 +1,4 @@
+# comment
 require 'rake'
 require 'erb'
 
