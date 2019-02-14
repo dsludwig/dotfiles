@@ -6,7 +6,23 @@ alias reload='. ~/.bash_profile'
 alias startx='exec ssh-agent startx'
 
 c() {
-  cd "$HOME/code/$1"
+  local repo=$1
+
+  cd "$HOME/code/$repo"
+
+  if [ "$2" = "3" ]; then
+    repo=$repo-py3
+  fi
+
+  if [ -n "$repo" -a -d "$HOME/anaconda/envs/$repo" ]; then
+    source activate "$repo"
+  else
+    source deactivate >/dev/null 2>&1
+  fi
+}
+
+try() {
+  "$@" && say "done" || say "failed"
 }
 
 # Git related aliases
@@ -47,19 +63,19 @@ flatten() {
 }
 
 # Movie/TV management
-unwatched() {
-  if [ -e .watched ]; then
-    ls -1 | cat .watched - | sort | uniq -u
-  else
-    ls -1 | sort
-  fi
-}
-watch() {
-  if [ -e "$1" ]; then
-    echo "$1" >> .watched
-    "/c/Program Files/MPC HomeCinema (x64)/mpc-hc64.exe" "$1"
-  else
-    echo Could not find: $1
-  fi
-}
-alias watch-next='watch "$(unwatched | head -1)"'
+# unwatched() {
+#   if [ -e .watched ]; then
+#     ls -1 | cat .watched - | sort | uniq -u
+#   else
+#     ls -1 | sort
+#   fi
+# }
+# watch() {
+#   if [ -e "$1" ]; then
+#     echo "$1" >> .watched
+#     "/c/Program Files/MPC HomeCinema (x64)/mpc-hc64.exe" "$1"
+#   else
+#     echo Could not find: $1
+#   fi
+# }
+# alias watch-next='watch "$(unwatched | head -1)"'
