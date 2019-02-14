@@ -119,6 +119,7 @@ if has("autocmd")
 
 
   autocmd BufRead /Users/dludwig/code/docs/todos.md call AddDate()
+  autocmd BufRead notes.md call AddDate()
 
 
   augroup END
