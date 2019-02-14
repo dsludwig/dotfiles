@@ -12,3 +12,7 @@ tags
 .cache/
 # exrc - project specific vim configuration
 /.vimrc
+__pycache__
+.ipynb_checkpoints/
+# root temporary directory
+/tmp
