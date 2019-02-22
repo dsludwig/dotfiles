@@ -2,6 +2,7 @@
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
+  bb = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 	co = checkout
   ci = commit
   uncommit = reset --soft HEAD^
@@ -14,6 +15,9 @@
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
 	editor = vim
 	autocrlf = input
+#	editor = /Users/dludwig/.bin/vim
+#	quotepath = false
+#	abbrev = 7
 [apply]
 	whitespace = nowarn
 [format]
@@ -22,3 +26,8 @@
   default = simple
 [merge]
   tool = kdiff3
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
