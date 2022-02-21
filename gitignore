@@ -16,3 +16,11 @@ __pycache__
 .ipynb_checkpoints/
 # root temporary directory
 /tmp
+# root scratch directory
+/scratch/
+.vscode/
+.settings/
+.venv/
+
+# nvm configuration
+.nvmrc
