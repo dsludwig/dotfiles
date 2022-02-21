@@ -1,11 +1,18 @@
 import pathlib
 
+SKIP_LIST = (
+    'CMakeLists.txt',
+    'README.md',
+    'build',
+    'install.py',
+    'src',
+)
 
 def main():
     replace_all = False
     path = pathlib.Path('.')
     for fn in path.glob("*"):
-        if fn.name.startswith('.') or fn.name in ('install.py'):
+        if fn.name.startswith('.') or fn.name in SKIP_LIST:
             continue
         fn = fn.resolve()
         home_fn = path.home() / ('.' + fn.name)
