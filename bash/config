@@ -62,13 +62,6 @@ exitstatus() {
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export PROMPT_COMMAND=exitstatus
-#export PS1="\[${green}\]\u@\h\
-#\[${yellow}\] \w\
-#\[${yellow}\]"'$(__git_ps1)'"\
-#\[${purple}\] "'$(git_current)'"\
-#\[${white}\]\n\$\
-#\["'$(title "\h:\w")'"\]\
-#\[${color_off}\] "
 export EDITOR="vim"
 export PAGER="less"
 export LESS="-R -S"
