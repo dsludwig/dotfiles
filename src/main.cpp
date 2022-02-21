@@ -16,7 +16,7 @@ int main()
     const std::filesystem::path root{ROOT_PATH};
     for (auto const& dir_entry : std::filesystem::directory_iterator{root})
     {
-        const std::string basename = dir_entry.path().stem().string() ;
+        const std::string basename = dir_entry.path().filename().string();
         if (basename[0] == '.') {
             continue;
         }
