@@ -2,6 +2,7 @@
 	name = Derek Ludwig
 	email = derek.s.ludwig@gmail.com
 [alias]
+	bb = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 	co = checkout
 	ci = commit
 	uncommit = reset --soft HEAD^
