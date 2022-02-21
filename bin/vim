@@ -1,3 +1,0 @@
-#!/bin/bash
-export DYLD_FORCE_FLAT_NAMESPACE=1
-exec /usr/local/homebrew/bin/mvim -v "$@"
