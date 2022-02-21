@@ -90,3 +90,6 @@ if [ -f '/Users/dludwig/google-cloud-sdk/path.bash.inc' ]; then source '/Users/d
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dludwig/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/dludwig/google-cloud-sdk/completion.bash.inc'; fi
+
+# The next line enables conda
+if [ -f '/Users/dludwig/miniconda3/etc/profile.d/conda.sh' ]; then source '/Users/dludwig/miniconda3/etc/profile.d/conda.sh'; fi
