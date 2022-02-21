@@ -1,0 +1,33 @@
+[user]
+	name = Derek Ludwig
+	email = derek.s.ludwig@gmail.com
+[alias]
+	co = checkout
+	ci = commit
+	uncommit = reset --soft HEAD^
+	po = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = /Users/dludwig/.gitignore
+	editor = vim
+	autocrlf = input
+[apply]
+	whitespace = nowarn
+[format]
+	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[push]
+	default = simple
+[merge]
+	tool = kdiff3
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
