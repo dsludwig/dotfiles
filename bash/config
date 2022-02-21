@@ -80,6 +80,8 @@ export CLICOLOR="auto"
 set -o vi
 set bell-style visible
 
+# turn off brew auto-update
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # vim:filetype=bash
 
