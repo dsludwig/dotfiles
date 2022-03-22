@@ -19,6 +19,9 @@ try() {
 }
 
 # Git related aliases
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
 gs() {
   if [ "$#" == "0" ]; then
     git status --porcelain
